@@ -18,7 +18,7 @@ FROM ${BASE_IMAGE}
 
 # Install Unity hub
 RUN mkdir /opt/unity && \
-    cd /opt/unity/unintyhub.appimage && \
+    cd /opt/unity && \
     wget https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage && \
     chmod +x UnityHub.AppImage && \
     ./UnityHub.AppImage --appimage-extract
