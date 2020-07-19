@@ -16,11 +16,16 @@ ARG BASE_IMAGE=gcr.io/my-project/webrtc-gpu-streaming-app-streaming:latest
 
 FROM ${BASE_IMAGE}
 
-# Install Unity hub
+# Download and extract Unity Hub
 RUN mkdir /opt/unity && \
     cd /opt/unity && \
+    sudo apt install wget && \
     wget https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage && \
     chmod +x UnityHub.AppImage && \
     ./UnityHub.AppImage --appimage-extract
 
+# Remove unnecessary tools
+RUN sudo apt remove --purge wget
+
+# Set binary executable
 ENV EXEC_CMD /opt/unity/squashfs-root/AppRun
