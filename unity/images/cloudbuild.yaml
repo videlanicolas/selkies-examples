@@ -16,7 +16,7 @@ timeout: 3600s
 
 substitutions:
   _USE_CACHE: "true"
-  _APP_NAME: blender
+  _APP_NAME: unityhub
   _IMAGE_PREFIX: vdi
   _IMAGE_TAG: latest
 
